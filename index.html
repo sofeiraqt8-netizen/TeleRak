@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0b0f1a" />
+  <meta name="description" content="TeleRak Official Verification Page - الصفحة الرسمية للتحقق من البوت والقناة لمنع التقليد والاحتيال." />
+
+  <title>TeleRak — Official Verification</title>
+
+  <style>
+    :root{
+      --bg:#070a12;
+      --card:#0b1020cc;
+      --card2:#0b1020f2;
+      --text:#e9ecf5;
+      --muted:#a7b0c5;
+      --accent:#6aa8ff;
+      --accent2:#8b5cf6;
+      --danger:#ff5c7a;
+      --ok:#40d39c;
+      --border:#1a2542;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 24px;
+      --max: 1100px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans Arabic", "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background:
+        radial-gradient(1000px 700px at 80% -10%, rgba(106,168,255,.18), transparent 60%),
+        radial-gradient(900px 600px at 10% 10%, rgba(139,92,246,.16), transparent 60%),
+        radial-gradient(900px 600px at 50% 110%, rgba(64,211,156,.12), transparent 55%),
+        var(--bg);
+      min-height:100vh;
+      line-height:1.65;
+    }
+
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 60px}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:12px; padding:10px 12px;
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(11,16,32,.75), rgba(11,16,32,.35));
+      border-radius:999px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 30px rgba(0,0,0,.25);
+      position:sticky; top:14px; z-index:5;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px; padding-inline:8px;
+      white-space:nowrap;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, #fff, var(--accent));
+      box-shadow: 0 0 0 4px rgba(106,168,255,.12);
+    }
+    .brand strong{letter-spacing:.3px}
+    .brand span{color:var(--muted); font-size:13px}
+    .actions{display:flex; align-items:center; gap:10px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+      text-decoration:none;
+      transition:transform .12s ease, background .12s ease, border-color .12s ease;
+      font-weight:600;
+      font-size:14px;
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn:hover{transform: translateY(-1px); background:rgba(255,255,255,.06); border-color:#2a3a66}
+    .btn.primary{
+      border-color: transparent;
+      background: linear-gradient(90deg, rgba(106,168,255,.95), rgba(139,92,246,.95));
+      box-shadow: 0 14px 30px rgba(106,168,255,.18);
+      color:#0b1020;
+    }
+    .btn.primary:hover{filter:brightness(1.04)}
+    .btn.danger{border-color: rgba(255,92,122,.35); color:#ffd2dc; background: rgba(255,92,122,.08)}
+    .btn.small{padding:8px 12px; font-size:13px}
+
+    header{
+      margin-top:26px;
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    @media (max-width: 900px){
+      header{grid-template-columns:1fr}
+      .topbar{position:static}
+    }
+
+    .hero{
+      padding:22px;
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(11,16,32,.85), rgba(11,16,32,.35));
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(500px 200px at 20% 0%, rgba(106,168,255,.22), transparent 60%),
+        radial-gradient(450px 180px at 80% 30%, rgba(139,92,246,.18), transparent 65%);
+      pointer-events:none;
+      opacity:.9;
+    }
+    .hero > *{position:relative; z-index:1}
+
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      color:var(--muted);
+      font-weight:700;
+      letter-spacing:.3px;
+      font-size:13px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      width:fit-content;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:6px;
+      padding:4px 10px; border-radius:999px;
+      background: rgba(64,211,156,.12);
+      color:#c8ffef;
+      border:1px solid rgba(64,211,156,.25);
+      font-size:12px;
+      font-weight:800;
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size:38px;
+      line-height:1.15;
+      letter-spacing:-.6px;
+    }
+    @media (max-width: 520px){ h1{font-size:30px} }
+
+    .lead{color:var(--muted); margin:0 0 16px; font-size:16px}
+    .pillrow{display:flex; flex-wrap:wrap; gap:10px; margin-top:14px}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      color:#dbe2f6;
+      font-weight:700;
+      font-size:13px;
+    }
+    .herocta{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+
+    .aside{
+      padding:18px;
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(11,16,32,.92), rgba(11,16,32,.40));
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      overflow:hidden;
+    }
+    .poster{
+      width:100%;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.09);
+      overflow:hidden;
+      background:#0b1020;
+      aspect-ratio: 1 / 1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .poster img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .aside h2{margin:14px 0 6px; font-size:18px}
+    .aside p{margin:0; color:var(--muted); font-size:14px}
+    .aside .mini{margin-top:12px; display:flex; gap:10px; flex-wrap:wrap}
+
+    main{margin-top:22px}
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:16px;
+    }
+    .card{
+      grid-column: span 6;
+      padding:18px;
+      border-radius: var(--radius);
+      border:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(11,16,32,.80), rgba(11,16,32,.30));
+      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+      backdrop-filter: blur(10px);
+    }
+    @media (max-width: 900px){ .card{grid-column: span 12} }
+
+    .card h3{margin:0 0 10px; font-size:18px}
+    .card p{margin:0 0 10px; color:var(--muted)}
+    .list{margin:10px 0 0; padding:0 18px 0 0}
+    .list li{margin:8px 0; color:#d7def1}
+    .hint{color:var(--muted); font-size:13px; margin-top:10px}
+    .codebox{
+      display:flex; flex-wrap:wrap; gap:10px; margin-top:10px;
+    }
+    .copy{
+      display:flex; align-items:center; gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px dashed rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      width:fit-content;
+      max-width:100%;
+    }
+    .mono{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; font-size:13px}
+    .copy button{
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      border-radius: 10px;
+      padding:8px 10px;
+      cursor:pointer;
+      font-weight:800;
+    }
+    .copy button:hover{background: rgba(255,255,255,.06)}
+
+    .alert{
+      padding:14px 16px;
+      border-radius: 16px;
+      border:1px solid rgba(255,92,122,.28);
+      background: rgba(255,92,122,.08);
+      color:#ffd3dc;
+      margin-top:12px;
+      font-size:14px;
+    }
+    .ok{
+      border-color: rgba(64,211,156,.28);
+      background: rgba(64,211,156,.08);
+      color:#ccfff1;
+    }
+
+    footer{
+      margin-top:24px;
+      padding:16px 6px 0;
+      color:var(--muted);
+      font-size:12.5px;
+      text-align:center;
+    }
+    .sep{opacity:.55; padding:0 8px}
+    .langtoggle{
+      display:inline-flex; gap:8px; align-items:center;
+      padding-inline:6px;
+    }
+    .langtoggle .btn{padding:8px 10px}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <span class="dot" aria-hidden="true"></span>
+        <div>
+          <strong>TeleRak</strong>
+          <span>— Official Verification</span>
+        </div>
+      </div>
+
+      <div class="actions">
+        <div class="langtoggle" aria-label="language">
+          <button class="btn small" id="langAr" type="button">AR</button>
+          <button class="btn small" id="langEn" type="button">EN</button>
+        </div>
+        <a class="btn small" href="#verify">التحقق</a>
+        <a class="btn small danger" href="#report">الإبلاغ</a>
+        <a class="btn primary" href="https://t.me/QiOBot" target="_blank" rel="noopener">فتح البوت الرسمي</a>
+      </div>
+    </div>
+
+    <header>
+      <section class="hero" id="top">
+        <div class="kicker">
+          <span class="badge">ANTI-SCAM</span>
+          <span data-i18n="kicker">صفحة التحقق الرسمية لمنع التقليد والاحتيال</span>
+        </div>
+
+        <h1 data-i18n="title">TeleRak — توثيق البوت والقناة الرسمية</h1>
+
+        <p class="lead" data-i18n="lead">
+          هذه الصفحة هدفها الوحيد: التأكد أنك تتعامل مع الروابط الرسمية فقط. أي حساب مشابه بالاسم أو يطلب تحويلات خارج الروابط أدناه غالبًا احتيال.
+        </p>
+
+        <div class="pillrow">
+          <div class="pill">✅ <span data-i18n="pill1">روابط رسمية ثابتة</span></div>
+          <div class="pill">🔒 <span data-i18n="pill2">مكافحة الانتحال</span></div>
+          <div class="pill">⚠️ <span data-i18n="pill3">تحذيرات واضحة للمستخدم</span></div>
+        </div>
+
+        <div class="herocta">
+          <a class="btn primary" href="https://t.me/QiOBot" target="_blank" rel="noopener" data-i18n="ctaBot">فتح البوت الرسمي @QiOBot</a>
+          <a class="btn" href="https://t.me/TeleRak_Updates" target="_blank" rel="noopener" data-i18n="ctaChan">فتح قناة التحديثات @TeleRak_Updates</a>
+          <a class="btn" href="#verify" data-i18n="ctaHow">كيف تتحقق؟</a>
+        </div>
+
+        <div class="alert ok" style="margin-top:16px">
+          <strong data-i18n="noteStrong">ملاحظة:</strong>
+          <span data-i18n="noteText">هذه الصفحة لا تنفّذ أي خدمات ولا تستقبل مدفوعات. هي فقط للتحقق من الروابط الرسمية.</span>
+        </div>
+      </section>
+
+      <aside class="aside">
+        <div class="poster">
+          <!-- ضع الصورة بجانب ملف index.html باسم: telerak.jpg -->
+          <img src="telerak.jpg" alt="TeleRak poster" />
+        </div>
+        <h2 data-i18n="asideTitle">الروابط الرسمية المختصرة</h2>
+        <p data-i18n="asideLead">انسخها وتأكد من التطابق 100% قبل أي تفاعل.</p>
+
+        <div class="codebox">
+          <div class="copy">
+            <div>
+              <div class="hint" data-i18n="botLabel">البوت</div>
+              <div class="mono" id="botHandle">@QiOBot</div>
+            </div>
+            <button type="button" data-copy="#botHandle" data-i18n="copyBtn">نسخ</button>
+          </div>
+
+          <div class="copy">
+            <div>
+              <div class="hint" data-i18n="chanLabel">القناة</div>
+              <div class="mono" id="chanHandle">@TeleRak_Updates</div>
+            </div>
+            <button type="button" data-copy="#chanHandle" data-i18n="copyBtn">نسخ</button>
+          </div>
+        </div>
+
+        <div class="mini">
+          <a class="btn" href="#verify" data-i18n="miniVerify">خطوات التحقق</a>
+          <a class="btn danger" href="#report" data-i18n="miniReport">الإبلاغ عن مزيف</a>
+        </div>
+      </aside>
+    </header>
+
+    <main>
+      <div class="grid">
+        <section class="card" id="verify">
+          <h3 data-i18n="verifyTitle">كيف تتحقق خلال 10 ثواني؟</h3>
+          <p data-i18n="verifyLead">اتبع هذه الخطوات السريعة قبل أن تتفاعل مع أي جهة تدّعي أنها TeleRak.</p>
+          <ol class="list">
+            <li data-i18n="v1">طابق المعرف حرفيًا: <span class="mono">@QiOBot</span> (لا حروف إضافية، لا شرطات، لا نقاط).</li>
+            <li data-i18n="v2">افتح القناة الرسمية فقط: <span class="mono">@TeleRak_Updates</span>.</li>
+            <li data-i18n="v3">أي شخص يرسل لك “رابط بديل” أو “وكيل بديل” خارج هذه الصفحة = احتمال كبير احتيال.</li>
+            <li data-i18n="v4">لا تشارك أكواد تسجيل الدخول/التحقق مع أي شخص.</li>
+          </ol>
+          <div class="alert" data-i18n="verifyAlert">
+            ⚠️ تحذير: الانتحال غالبًا يكون باسم قريب جدًا من الأصلي. ركّز على الحروف حرفًا بحرف.
+          </div>
+        </section>
+
+        <section class="card">
+          <h3 data-i18n="scamTitle">أشهر طرق الاحتيال</h3>
+          <p data-i18n="scamLead">لو شفت أي نقطة من هذه—اعتبرها إشارة خطر.</p>
+          <ul class="list">
+            <li data-i18n="s1">بوت/قناة باسم مشابه (حرف زيادة/نقصان).</li>
+            <li data-i18n="s2">طلب تحويل أو تواصل عبر حسابات غير مذكورة في هذه الصفحة.</li>
+            <li data-i18n="s3">روابط “telegra.ph” أو مواقع مزيفة تقلّد نفس التصميم.</li>
+            <li data-i18n="s4">رسائل مستعجلة: “لازم الآن” / “عرض ينتهي” لإجبارك تتصرف بسرعة.</li>
+          </ul>
+          <div class="hint" data-i18n="scamHint">
+            نصيحة: احفظ هذه الصفحة في المفضلة وارجع لها دائمًا قبل أي خطوة.
+          </div>
+        </section>
+
+        <section class="card" id="report">
+          <h3 data-i18n="reportTitle">الإبلاغ عن بوت/قناة مزيفة</h3>
+          <p data-i18n="reportLead">ساعدنا نحمي المستخدمين. جهّز المعلومات التالية وأرسلها للدعم/الإدارة.</p>
+          <ul class="list">
+            <li data-i18n="r1">رابط الحساب/القناة المزيفة (t.me/…)</li>
+            <li data-i18n="r2">لقطة شاشة توضح الاسم والمعرف</li>
+            <li data-i18n="r3">وصف مختصر لما حدث</li>
+          </ul>
+
+          <div class="alert ok" data-i18n="reportOk">
+            ✅ أفضل طريقة: شارك رابط المزيف داخل قناة التحديثات الرسمية (إن كان لديكم منشور مخصص للتقارير) أو عبر حساب دعم رسمي.
+          </div>
+
+          <div class="hint" style="margin-top:10px" data-i18n="reportNote">
+            (اختياري) إذا عندكم معرف دعم رسمي ارسله لي هنا وأنا أضيفه كزر مباشر في الموقع.
+          </div>
+        </section>
+
+        <section class="card">
+          <h3 data-i18n="faqTitle">أسئلة سريعة</h3>
+          <ul class="list">
+            <li><strong data-i18n="q1">هل هذا الموقع تابع لتليجرام؟</strong><br><span data-i18n="a1">لا. هذا موقع تعريفي للتحقق من الروابط الرسمية فقط.</span></li>
+            <li style="margin-top:10px"><strong data-i18n="q2">هل الموقع يستقبل مدفوعات؟</strong><br><span data-i18n="a2">لا. لا توجد أي مدفوعات داخل هذا الموقع.</span></li>
+            <li style="margin-top:10px"><strong data-i18n="q3">كيف أتأكد أني مع الرسمي؟</strong><br><span data-i18n="a3">طابق المعرفين الرسميين بالأعلى وافتح الروابط من هنا فقط.</span></li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div>
+        <span data-i18n="footer1">TeleRak Verification Page — This site is for verification only.</span>
+        <span class="sep">•</span>
+        <span data-i18n="footer2">Not affiliated with Telegram.</span>
+      </div>
+      <div style="margin-top:6px">
+        <span data-i18n="footer3">©</span> <span id="year"></span> TeleRak
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Copy buttons
+    document.querySelectorAll("[data-copy]").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        const sel = btn.getAttribute("data-copy");
+        const el = document.querySelector(sel);
+        if (!el) return;
+        try{
+          await navigator.clipboard.writeText(el.textContent.trim());
+          const old = btn.textContent;
+          btn.textContent = (document.documentElement.lang === "ar") ? "تم" : "Copied";
+          setTimeout(()=> btn.textContent = old, 900);
+        }catch(e){
+          alert((document.documentElement.lang === "ar") ? "لم يتم النسخ. انسخ يدويًا." : "Copy failed. Please copy manually.");
+        }
+      });
+    });
+
+    // Simple i18n
+    const dict = {
+      ar: {
+        kicker: "صفحة التحقق الرسمية لمنع التقليد والاحتيال",
+        title: "TeleRak — توثيق البوت والقناة الرسمية",
+        lead: "هذه الصفحة هدفها الوحيد: التأكد أنك تتعامل مع الروابط الرسمية فقط. أي حساب مشابه بالاسم أو يطلب تحويلات خارج الروابط أدناه غالبًا احتيال.",
+        pill1: "روابط رسمية ثابتة",
+        pill2: "مكافحة الانتحال",
+        pill3: "تحذيرات واضحة للمستخدم",
+        ctaBot: "فتح البوت الرسمي @QiOBot",
+        ctaChan: "فتح قناة التحديثات @TeleRak_Updates",
+        ctaHow: "كيف تتحقق؟",
+        noteStrong: "ملاحظة:",
+        noteText: "هذه الصفحة لا تنفّذ أي خدمات ولا تستقبل مدفوعات. هي فقط للتحقق من الروابط الرسمية.",
+        asideTitle: "الروابط الرسمية المختصرة",
+        asideLead: "انسخها وتأكد من التطابق 100% قبل أي تفاعل.",
+        botLabel: "البوت",
+        chanLabel: "القناة",
+        copyBtn: "نسخ",
+        miniVerify: "خطوات التحقق",
+        miniReport: "الإبلاغ عن مزيف",
+        verifyTitle: "كيف تتحقق خلال 10 ثواني؟",
+        verifyLead: "اتبع هذه الخطوات السريعة قبل أن تتفاعل مع أي جهة تدّعي أنها TeleRak.",
+        v1: "طابق المعرف حرفيًا: @QiOBot (لا حروف إضافية، لا شرطات، لا نقاط).",
+        v2: "افتح القناة الرسمية فقط: @TeleRak_Updates.",
+        v3: "أي شخص يرسل لك “رابط بديل” أو “جهة بديلة” خارج هذه الصفحة = احتمال كبير احتيال.",
+        v4: "لا تشارك أكواد تسجيل الدخول/التحقق مع أي شخص.",
+        verifyAlert: "⚠️ تحذير: الانتحال غالبًا يكون باسم قريب جدًا من الأصلي. ركّز على الحروف حرفًا بحرف.",
+        scamTitle: "أشهر طرق الاحتيال",
+        scamLead: "لو شفت أي نقطة من هذه—اعتبرها إشارة خطر.",
+        s1: "بوت/قناة باسم مشابه (حرف زيادة/نقصان).",
+        s2: "طلب تحويل أو تواصل عبر حسابات غير مذكورة في هذه الصفحة.",
+        s3: "روابط مواقع مزيفة تقلّد نفس التصميم أو صفحة تحقق مزورة.",
+        s4: "رسائل مستعجلة لإجبارك تتصرف بسرعة.",
+        scamHint: "نصيحة: احفظ هذه الصفحة في المفضلة وارجع لها دائمًا قبل أي خطوة.",
+        reportTitle: "الإبلاغ عن بوت/قناة مزيفة",
+        reportLead: "ساعدنا نحمي المستخدمين. جهّز المعلومات التالية وأرسلها للدعم/الإدارة.",
+        r1: "رابط الحساب/القناة المزيفة (t.me/…)",
+        r2: "لقطة شاشة توضح الاسم والمعرف",
+        r3: "وصف مختصر لما حدث",
+        reportOk: "✅ أفضل طريقة: شارك رابط المزيف عبر القناة الرسمية أو حساب الدعم الرسمي.",
+        reportNote: "(اختياري) إذا عندكم معرف دعم رسمي ارسله لي هنا وأنا أضيفه كزر مباشر في الموقع.",
+        faqTitle: "أسئلة سريعة",
+        q1: "هل هذا الموقع تابع لتليجرام؟",
+        a1: "لا. هذا موقع تعريفي للتحقق من الروابط الرسمية فقط.",
+        q2: "هل الموقع يستقبل مدفوعات؟",
+        a2: "لا. لا توجد أي مدفوعات داخل هذا الموقع.",
+        q3: "كيف أتأكد أني مع الرسمي؟",
+        a3: "طابق المعرفين الرسميين بالأعلى وافتح الروابط من هنا فقط.",
+        footer1: "TeleRak Verification Page — هذه صفحة تحقق فقط.",
+        footer2: "غير تابع رسميًا لتليجرام.",
+        footer3: "©"
+      },
+      en: {
+        kicker: "Official verification page to prevent impersonation and scams",
+        title: "TeleRak — Official Bot & Channel Verification",
+        lead: "This page has one job: confirm you are using the official links only. Similar names or requests outside the links below are likely scams.",
+        pill1: "Fixed official links",
+        pill2: "Anti-impersonation",
+        pill3: "Clear user warnings",
+        ctaBot: "Open Official Bot @QiOBot",
+        ctaChan: "Open Updates Channel @TeleRak_Updates",
+        ctaHow: "How to verify",
+        noteStrong: "Note:",
+        noteText: "This page does not provide services or accept payments. It is for verification only.",
+        asideTitle: "Official short handles",
+        asideLead: "Copy and ve
